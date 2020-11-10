@@ -1,0 +1,6 @@
+.nav-link {
+  color: #fff;
+  &.active {
+    border-bottom: hotpink 4px solid;
+  }
+}
