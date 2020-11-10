@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <title>Fleet Manager</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Navigation -->
+
+      <ul class="nav navbar-dark bg-primary">
+        <li class="nav-item">
+          <a class="nav-link active">Flotte</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">Domain A</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">Domain B</a>
+        </li>
+      </ul>
+      <hr />
+      <div class="row">
+        <!-- List -->
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Kennzeichen</th>
+              <th scope="col">Marke/Model</th>
+              <th scope="col">Kategorie</th>
+              <th scope="col">Sitzplätze</th>
+              <th scope="col">Verfügbarkeit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">WI–HP 123</th>
+              <td>MB C-220</td>
+              <td>Kombi</td>
+              <td>4</td>
+              <td>❌</td>
+            </tr>
+            <tr>
+              <th scope="row">WI–HP 111</th>
+              <td>MB W-639</td>
+              <td>Bus</td>
+              <td>6</td>
+              <td>✔️</td>
+            </tr>
+            <tr>
+              <th scope="row">WI–HP 444</th>
+              <td>BMW R1200</td>
+              <td>KRAD</td>
+              <td>1</td>
+              <td>❌</td>
+            </tr>
+          </tbody>
+        </table>
+        <hr />
+      </div>
+      <div class="row">
+        <!-- Details -->
+        <div class="card">
+          <img
+            class="card-img-top"
+            src="https://img.nrz.de/img/duesseldorf/crop212325219/2913973861-w940-cv16_9-q85/VitoTourerPolizei2.jpg"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <h5 class="card-title">WI–HP 111 ✔️</h5>
+            <p class="card-text">
+              <strong>Ausstattung:</strong>
+              <li>Sondersignalanlage (mit eingebauten Lautsprechern)</li>
+              <li>BOS-Funk (mit Funkmeldesystem)</li>
+              <li>Anhaltesignalgebern</li>
+              <li>Feuerlöscher</li>
+              <li>Nothammer</li>
+              <li>Erste Hilfe Material</li>
+              <li>Warnleuchten</li>
+              <li>Verkehrsleitkegel</li>
+              <li>Winkerkelle</li>
+              <li>Fotoapparat</li>
+              <li>Maßband</li>
+              <li>Fettkreide</li>
+            </p>
+            <h6>👮‍♀️👮‍♀️👮‍♀️👮‍♀️👮‍♀️👮‍♀️</h6>
+          </div>
+          <div class="card-body">
+            <a class="card-link">Ausleihen</a>
+            <a class="card-link">Bearbeiten</a>
+          </div>
+        </div>
+        <hr />
+      </div>
+      <div class="row">
+        <!-- Edit/New -->
+        <form>
+          <div class="form-group row">
+            <label for="kennzeichen" class="col-sm-4 col-form-label"
+              >Kennzeichen</label
+            >
+            <div class="col-sm-8">
+              <input
+                type="text"
+                class="form-control"
+                id="kennzeichen"
+                value="WI–HP 111"
+              />
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="ausstattung" class="col-sm-4 col-form-label"
+              >Ausstattung</label
+            >
+            <div class="col-sm-8">
+              <textarea
+                class="form-control"
+                cols="30"
+                rows="3"
+                id="ausstattung"
+              >
+Sondersignalanlage (mit eingebauten Lautsprechern), BOS-Funk (mit Funkmeldesystem), Anhaltesignalgebern, Feuerlöscher, Nothammer, Erste Hilfe Material, Warnleuchten, Verkehrsleitkegel, Winkerkelle, Fotoapparat, Maßband, Fettkreide
+            </textarea
+              >
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="sitzplätze" class="col-sm-4 col-form-label"
+              >Sitzplätze</label
+            >
+            <div class="col-sm-8">
+              <input
+                type="number"
+                class="form-control"
+                id="sitzplätze"
+                value="6"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

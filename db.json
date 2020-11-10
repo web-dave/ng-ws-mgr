@@ -1,0 +1,34 @@
+{
+  "fleet": [
+    {
+      "id": 1,
+      "kennzeichen": "WI–HP 123",
+      "model": "MB C-220",
+      "typ": "Kombi",
+      "sitzplaetze": "4",
+      "available": true,
+      "ausstattung": "Sondersignalanlage (mit eingebauten Lautsprechern);BOS-Funk (mit Funkmeldesystem);Anhaltesignalgebern;Feuerlöscher;Nothammer;Erste Hilfe Material;Warnleuchten;Verkehrsleitkegel;Winkerkelle;Fotoapparat;Maßband;Fettkreide",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Hannover_%28DerHexer%29_Polizeifahrzeug.JPG"
+    },
+    {
+      "id": 2,
+      "kennzeichen": "WI–HP 111",
+      "model": "MB W-639",
+      "typ": "Bus",
+      "sitzplaetze": "6",
+      "available": true,
+      "ausstattung": "Sondersignalanlage (mit eingebauten Lautsprechern);BOS-Funk (mit Funkmeldesystem);Anhaltesignalgebern;Feuerlöscher;Nothammer;Erste Hilfe Material;Warnleuchten;Verkehrsleitkegel;Winkerkelle;Fotoapparat;Maßband;Fettkreide",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Mercedes-Benz_Vito_front_20081129.jpg/1024px-Mercedes-Benz_Vito_front_20081129.jpg"
+    },
+    {
+      "id": 3,
+      "kennzeichen": "WI–HP 444",
+      "model": "BMW R1200",
+      "typ": "KRAD",
+      "sitzplaetze": "1",
+      "available": true,
+      "ausstattung": "Sondersignalanlage (mit eingebauten Lautsprechern);BOS-Funk (mit Funkmeldesystem);Anhaltesignalgebern;Feuerlöscher;Nothammer;Erste Hilfe Material;Warnleuchten;Verkehrsleitkegel;Winkerkelle;Fotoapparat;Maßband;Fettkreide",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Polizeimotorrad_Niedersachsen.jpg"
+    }
+  ]
+}
