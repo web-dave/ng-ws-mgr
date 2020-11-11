@@ -22,4 +22,8 @@ export class VehicleListComponent implements OnInit, OnDestroy {
       .getCars()
       .subscribe((data) => (this.vehicles = data));
   }
+
+  vehicleWasSelected(vehicle) {
+    console.table(vehicle);
+  }
 }

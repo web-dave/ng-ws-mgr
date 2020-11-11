@@ -1,5 +1,11 @@
 <h3>Vehicle List</h3>
-<ul *ngIf="vehicles; else loading">
-  <li *ngFor="let vehicle of vehicles">{{ vehicle.title }}</li>
-</ul>
+<div class="container">
+  <div *ngIf="vehicles; else loading" class="row">
+    <bka-vehicle-preview
+      *ngFor="let vehicle of vehicles"
+      [vehicle]="vehicle"
+      (vehicleselected)="vehicleWasSelected($event)"
+    ></bka-vehicle-preview>
+  </div>
+</div>
 <ng-template #loading>Loading</ng-template>
