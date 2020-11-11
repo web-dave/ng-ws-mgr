@@ -8,9 +8,10 @@ import { VehiclePreviewComponent } from './vehicle-preview/vehicle-preview.compo
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 import { AvailablePipe } from './shared/available.pipe';
 import { SeatsPipe } from './shared/seats.pipe';
+import { AvailableDirective } from './available.directive';
 
 @NgModule({
-  declarations: [FleetComponent, VehicleListComponent, VehiclePreviewComponent, VehicleDetailsComponent, AvailablePipe, SeatsPipe],
+  declarations: [FleetComponent, VehicleListComponent, VehiclePreviewComponent, VehicleDetailsComponent, AvailablePipe, SeatsPipe, AvailableDirective],
   exports: [FleetComponent],
   imports: [CommonModule, FleetRoutingModule],
 })

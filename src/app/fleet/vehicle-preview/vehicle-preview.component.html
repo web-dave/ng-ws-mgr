@@ -1,4 +1,8 @@
-<div class="list-group-item row" (click)="selectVehicle()">
+<div
+  class="list-group-item row"
+  (click)="selectVehicle()"
+  [bkaAvailable]="vehicle.status.id"
+>
   <strong class="col-6">{{ vehicle.title }}</strong>
   <strong class="col-6">{{ vehicle.plate }}</strong>
 </div>
