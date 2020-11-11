@@ -22,6 +22,7 @@ export class AvailableDirective implements OnChanges {
   }
   ngOnChanges() {
     this.element.innerText = this.trans.transform(this.status);
+    console.log(this.status);
   }
   @HostListener('mouseenter')
   show() {

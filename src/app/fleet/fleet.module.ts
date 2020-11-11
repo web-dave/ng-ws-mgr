@@ -9,10 +9,21 @@ import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.compo
 import { AvailablePipe } from './shared/available.pipe';
 import { SeatsPipe } from './shared/seats.pipe';
 import { AvailableDirective } from './available.directive';
+import { VehicleEditComponent } from './vehicle-edit/vehicle-edit.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [FleetComponent, VehicleListComponent, VehiclePreviewComponent, VehicleDetailsComponent, AvailablePipe, SeatsPipe, AvailableDirective],
+  declarations: [
+    FleetComponent,
+    VehicleListComponent,
+    VehiclePreviewComponent,
+    VehicleDetailsComponent,
+    AvailablePipe,
+    SeatsPipe,
+    AvailableDirective,
+    VehicleEditComponent,
+  ],
   exports: [FleetComponent],
-  imports: [CommonModule, FleetRoutingModule],
+  imports: [CommonModule, FleetRoutingModule, FormsModule],
 })
 export class FleetModule {}

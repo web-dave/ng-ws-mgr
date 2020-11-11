@@ -19,11 +19,5 @@ export class VehicleDetailsComponent implements OnInit {
     this.car$ = this.route.params.pipe(
       switchMap((params) => this.service.getCar(params.id))
     );
-    setInterval(() => (this.i = 1), 1000);
-  }
-
-  available(n: number): '✔️' | '❌' {
-    console.log(n);
-    return n === 1 ? '✔️' : '❌';
   }
 }

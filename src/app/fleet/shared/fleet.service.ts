@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
 import { catchError, pluck } from 'rxjs/operators';
-import { IVehicle } from '../models/ivehicle';
+import { IUpdateVehicle, IVehicle } from '../models/ivehicle';
 
 @Injectable({
   providedIn: 'root',
@@ -24,5 +24,9 @@ export class FleetService {
       }),
       pluck('car')
     );
+  }
+
+  updateCar(car: IUpdateVehicle, id: number): Observable<IVehicle> {
+    return this.http.post(this.baseUrl + 'car/' + id, car).pipe(pluck('car'));
   }
 }

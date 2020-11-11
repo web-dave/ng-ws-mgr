@@ -17,7 +17,7 @@
     <button class="card-link btn" [disabled]="vehicle.status.id !== 1">
       Ausleihen
     </button>
-    <button class="card-link btn">Bearbeiten</button>
+    <button class="card-link btn" [routerLink]="['edit']">Bearbeiten</button>
     <button class="card-link btn" routerLink="..">Zurück</button>
   </div>
 </div>
