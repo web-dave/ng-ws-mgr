@@ -1,6 +1,4 @@
-<!-- <p>vehicle-details works!</p> -->
-<!-- <pre>{{ vehicle | json }}</pre> -->
-<div *ngIf="vehicle" class="card">
+<div *ngIf="car$ | async as vehicle" class="card">
   <img class="card-img-top" [src]="vehicle.image" alt="A car" />
   <div class="card-body">
     <h5 class="card-title">{{ vehicle.plate }} ✔️</h5>
