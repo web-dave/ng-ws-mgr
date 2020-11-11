@@ -1,1 +1,5 @@
-<p>vehicle-list works!</p>
+<h3>Vehicle List</h3>
+<ul *ngIf="vehicles; else loading">
+  <li *ngFor="let vehicle of vehicles">{{ vehicle.title }}</li>
+</ul>
+<ng-template #loading>Loading</ng-template>
