@@ -22,7 +22,7 @@ export class VehicleListComponent implements OnInit {
     this.vehicles$ = this.service.getCars();
   }
 
-  vehicleWasSelected(vehicle: IVehicle) {
+  vehicleWasSelected(vehicle: IVehicle): void {
     this.router.navigate([vehicle.id], { relativeTo: this.route });
   }
 }

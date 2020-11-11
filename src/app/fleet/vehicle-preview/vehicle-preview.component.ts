@@ -13,7 +13,7 @@ export class VehiclePreviewComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  selectVehicle() {
+  selectVehicle(): void {
     this.vehicleselected.emit(this.vehicle);
   }
 }

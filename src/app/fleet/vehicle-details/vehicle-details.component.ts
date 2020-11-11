@@ -1,7 +1,7 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable, Subject, Subscription } from 'rxjs';
-import { switchMap, takeUntil } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 import { IVehicle } from '../models/ivehicle';
 import { FleetService } from '../shared/fleet.service';
 
@@ -22,8 +22,8 @@ export class VehicleDetailsComponent implements OnInit {
     setInterval(() => (this.i = 1), 1000);
   }
 
-  available(number) {
-    console.log(number);
-    return number === 1 ? '✔️' : '❌';
+  available(n: number): '✔️' | '❌' {
+    console.log(n);
+    return n === 1 ? '✔️' : '❌';
   }
 }

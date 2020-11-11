@@ -4,8 +4,8 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'available',
 })
 export class AvailablePipe implements PipeTransform {
-  transform(number: number): '✔️' | '❌' {
-    console.log(number);
-    return number === 1 ? '✔️' : '❌';
+  transform(n: number): '✔️' | '❌' {
+    console.log(n);
+    return n === 1 ? '✔️' : '❌';
   }
 }

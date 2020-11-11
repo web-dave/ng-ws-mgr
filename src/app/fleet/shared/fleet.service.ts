@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
-import { pluck } from 'rxjs/operators';
+import { catchError, pluck } from 'rxjs/operators';
 import { IVehicle } from '../models/ivehicle';
 
 @Injectable({
@@ -17,6 +17,12 @@ export class FleetService {
   }
 
   getCar(id: number): Observable<IVehicle> {
-    return this.http.get(this.baseUrl + 'car/' + id).pipe(pluck('car'));
+    return this.http.get(this.baseUrl + 'car/' + id).pipe(
+      catchError((err) => {
+        console.error('FEHLER!', err);
+        return of(null);
+      }),
+      pluck('car')
+    );
   }
 }
