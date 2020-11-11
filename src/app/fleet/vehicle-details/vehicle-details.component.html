@@ -1,0 +1,20 @@
+<!-- <p>vehicle-details works!</p> -->
+<!-- <pre>{{ vehicle | json }}</pre> -->
+<div *ngIf="vehicle" class="card">
+  <img class="card-img-top" [src]="vehicle.image" alt="A car" />
+  <div class="card-body">
+    <h5 class="card-title">{{ vehicle.plate }} ✔️</h5>
+    <p class="card-text">
+      <strong>Ausstattung:</strong>
+      {{ vehicle.description }}
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis ducimus
+      minus fuga rem iste eos placeat dicta sunt voluptatum reiciendis pariatur
+      eaque aperiam ipsum odio, esse dolorum quaerat rerum vitae.
+    </p>
+  </div>
+  <div class="card-body">
+    <a class="card-link">Ausleihen</a>
+    <a class="card-link">Bearbeiten</a>
+    <a class="card-link" routerLink="..">Zurück</a>
+  </div>
+</div>

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { IVehicle } from '../models/ivehicle';
 
 @Component({
   selector: 'bka-vehicle-preview',
@@ -6,8 +7,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./vehicle-preview.component.scss'],
 })
 export class VehiclePreviewComponent implements OnInit {
-  @Input() vehicle;
-  @Output() vehicleselected = new EventEmitter();
+  @Input() vehicle: IVehicle;
+  @Output() vehicleselected = new EventEmitter<IVehicle>();
   constructor() {}
 
   ngOnInit(): void {}

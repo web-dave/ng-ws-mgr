@@ -1,6 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { FleetService } from '../fleet.service';
+import { IVehicle } from '../models/ivehicle';
+import { FleetService } from '../shared/fleet.service';
 
 @Component({
   selector: 'bka-vehicle-list',
@@ -8,10 +10,14 @@ import { FleetService } from '../fleet.service';
   styleUrls: ['./vehicle-list.component.scss'],
 })
 export class VehicleListComponent implements OnInit, OnDestroy {
-  vehicles;
+  vehicles: IVehicle[];
   sub: Subscription;
 
-  constructor(private service: FleetService) {}
+  constructor(
+    private service: FleetService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnDestroy(): void {
     this.sub.unsubscribe();
@@ -23,7 +29,7 @@ export class VehicleListComponent implements OnInit, OnDestroy {
       .subscribe((data) => (this.vehicles = data));
   }
 
-  vehicleWasSelected(vehicle) {
-    console.table(vehicle);
+  vehicleWasSelected(vehicle: IVehicle) {
+    this.router.navigate([vehicle.id], { relativeTo: this.route });
   }
 }
