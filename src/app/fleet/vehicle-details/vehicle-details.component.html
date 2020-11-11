@@ -1,7 +1,9 @@
 <div *ngIf="car$ | async as vehicle" class="card">
   <img class="card-img-top" [src]="vehicle.image" alt="A car" />
   <div class="card-body">
-    <h5 class="card-title">{{ vehicle.plate }} ✔️</h5>
+    <h5 class="card-title">
+      {{ vehicle.plate }} {{ vehicle.status.id | available }}
+    </h5>
     <p class="card-text">
       <strong>Ausstattung:</strong>
       {{ vehicle.description }}
@@ -9,10 +11,13 @@
       minus fuga rem iste eos placeat dicta sunt voluptatum reiciendis pariatur
       eaque aperiam ipsum odio, esse dolorum quaerat rerum vitae.
     </p>
+    <h6>{{ vehicle.seats | seats }}</h6>
   </div>
   <div class="card-body">
-    <a class="card-link">Ausleihen</a>
-    <a class="card-link">Bearbeiten</a>
-    <a class="card-link" routerLink="..">Zurück</a>
+    <button class="card-link btn" [disabled]="vehicle.status.id !== 1">
+      Ausleihen
+    </button>
+    <button class="card-link btn">Bearbeiten</button>
+    <button class="card-link btn" routerLink="..">Zurück</button>
   </div>
 </div>

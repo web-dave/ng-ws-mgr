@@ -12,12 +12,18 @@ import { FleetService } from '../shared/fleet.service';
 })
 export class VehicleDetailsComponent implements OnInit {
   car$: Observable<IVehicle>;
-
+  i = 0;
   constructor(private route: ActivatedRoute, private service: FleetService) {}
 
   ngOnInit(): void {
     this.car$ = this.route.params.pipe(
       switchMap((params) => this.service.getCar(params.id))
     );
+    setInterval(() => (this.i = 1), 1000);
+  }
+
+  available(number) {
+    console.log(number);
+    return number === 1 ? '✔️' : '❌';
   }
 }

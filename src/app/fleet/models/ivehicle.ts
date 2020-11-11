@@ -9,6 +9,7 @@ export interface IVehicle {
   description: string;
   image: string;
   status: IStatus;
+  seats: number;
   logs: ILog[];
   bookings: IBookings[];
 }
