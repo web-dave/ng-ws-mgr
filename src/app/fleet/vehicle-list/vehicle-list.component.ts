@@ -1,6 +1,6 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Observable } from 'rxjs';
 import { IVehicle } from '../models/ivehicle';
 import { FleetService } from '../shared/fleet.service';
 
@@ -9,9 +9,8 @@ import { FleetService } from '../shared/fleet.service';
   templateUrl: './vehicle-list.component.html',
   styleUrls: ['./vehicle-list.component.scss'],
 })
-export class VehicleListComponent implements OnInit, OnDestroy {
-  vehicles: IVehicle[];
-  sub: Subscription;
+export class VehicleListComponent implements OnInit {
+  vehicles$: Observable<IVehicle[]>;
 
   constructor(
     private service: FleetService,
@@ -19,14 +18,8 @@ export class VehicleListComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute
   ) {}
 
-  ngOnDestroy(): void {
-    this.sub.unsubscribe();
-  }
-
   ngOnInit(): void {
-    this.sub = this.service
-      .getCars()
-      .subscribe((data) => (this.vehicles = data));
+    this.vehicles$ = this.service.getCars();
   }
 
   vehicleWasSelected(vehicle: IVehicle) {

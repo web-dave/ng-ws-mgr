@@ -6,7 +6,7 @@
     (vehicleselected)="vehicleWasSelected($event)"
   ></bka-vehicle-preview>
 </div> -->
-<div *ngIf="vehicles; else loading" class="row">
+<div *ngIf="vehicles$ | async as vehicles; else loading" class="row">
   <bka-vehicle-preview
     class="col-6"
     *ngFor="let vehicle of vehicles"
