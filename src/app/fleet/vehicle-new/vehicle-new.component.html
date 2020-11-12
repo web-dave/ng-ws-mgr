@@ -1,35 +1,26 @@
-<form
-  *ngIf="vehicle$ | async as vehicle"
-  #carForm="ngForm"
-  (ngSubmit)="save(vehicle)"
->
+<form [formGroup]="carForm" (ngSubmit)="save()">
   <div class="form-group row">
     <label for="title" class="col-sm-3 col-form-label">Titel</label>
-    <span class="col-sm-1">{{ title.valid ? " " : "🚫" }}</span>
+    <span class="col-sm-1">{{ carForm.get("title").valid ? " " : "🚫" }}</span>
     <div class="col-sm-7">
       <input
         type="text"
         class="form-control"
         id="title"
-        name="title"
-        required
-        #title="ngModel"
-        [(ngModel)]="vehicle.title"
+        formControlName="title"
       />
     </div>
   </div>
   <div class="form-group row">
     <label for="kennzeichen" class="col-sm-3 col-form-label">Kennzeichen</label>
-    <span class="col-sm-1">{{ plate.valid ? " " : "🚫" }}</span>
+    <span class="col-sm-1">{{ carForm.get("plate").valid ? " " : "🚫" }}</span>
     <div class="col-sm-7">
       <input
         type="text"
         class="form-control"
         id="plate"
         name="plate"
-        required
-        #plate="ngModel"
-        [(ngModel)]="vehicle.plate"
+        formControlName="plate"
       />
     </div>
   </div>
@@ -37,7 +28,9 @@
     <label for="description" class="col-sm-3 col-form-label"
       >Beschreibung</label
     >
-    <span class="col-sm-1">{{ description.valid ? " " : "🚫" }}</span>
+    <span class="col-sm-1">{{
+      carForm.get("description").valid ? " " : "🚫"
+    }}</span>
     <div class="col-sm-7">
       <textarea
         class="form-control"
@@ -45,23 +38,21 @@
         rows="3"
         id="description"
         name="description"
-        required
-        #description="ngModel"
-        [(ngModel)]="vehicle.description"
+        formControlName="description"
       ></textarea>
     </div>
   </div>
   <div class="form-group row">
     <label for="status" class="col-sm-3 col-form-label">Verfügbarkeit</label>
-    <span class="col-sm-1">{{ status.valid ? " " : "🚫" }}</span>
+    <span class="col-sm-1">{{
+      carForm.get("status_id").valid ? " " : "🚫"
+    }}</span>
     <div class="col-sm-7">
       <select
         class="form-control"
         id="status"
         name="status"
-        required
-        #status="ngModel"
-        [(ngModel)]="vehicle.status.id"
+        formControlName="status_id"
       >
         <option value="1">✔️</option>
         <option value="2">❌</option>

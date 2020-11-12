@@ -20,9 +20,8 @@ export class VehicleEditComponent implements OnInit, OnDestroy {
       takeUntil(this.end$)
     );
   }
-  save(car, id: number) {
-    console.log(car);
-    this.service.updateCar(car, id).pipe(takeUntil(this.end$)).subscribe();
+  save(car: IVehicle) {
+    this.service.updateCar(car, car.id).pipe(takeUntil(this.end$)).subscribe();
   }
 
   ngOnDestroy() {

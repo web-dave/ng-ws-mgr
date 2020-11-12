@@ -4,6 +4,7 @@ import { FleetComponent } from './fleet.component';
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 import { VehicleEditComponent } from './vehicle-edit/vehicle-edit.component';
 import { VehicleListComponent } from './vehicle-list/vehicle-list.component';
+import { VehicleNewComponent } from './vehicle-new/vehicle-new.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,10 @@ const routes: Routes = [
       {
         path: '',
         component: VehicleListComponent,
+      },
+      {
+        path: 'new',
+        component: VehicleNewComponent,
       },
       {
         path: ':id',

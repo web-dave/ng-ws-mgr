@@ -13,9 +13,16 @@ export interface IVehicle {
   logs: ILog[];
   bookings: IBookings[];
 }
-export interface IUpdateVehicle {
+// export interface IUpdateVehicle {
+//   plate: string;
+//   title: string;
+//   description: string;
+//   status_id: number;
+// }
+export interface INewVehicle {
   plate: string;
   title: string;
-  description: string;
-  status: number;
+  seats: number;
+  status_id: number;
+  description?: string;
 }

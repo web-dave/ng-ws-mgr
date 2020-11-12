@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
-import { catchError, pluck } from 'rxjs/operators';
-import { IUpdateVehicle, IVehicle } from '../models/ivehicle';
+import { catchError, map, pluck } from 'rxjs/operators';
+import { INewVehicle, IVehicle } from '../models/ivehicle';
 
 @Injectable({
   providedIn: 'root',
@@ -22,11 +22,21 @@ export class FleetService {
         console.error('FEHLER!', err);
         return of(null);
       }),
-      pluck('car')
+      pluck('car'),
+      map((car) => {
+        if (!car.image) {
+          car.image = 'https://picsum.photos/200';
+        }
+        return car;
+      })
     );
   }
 
-  updateCar(car: IUpdateVehicle, id: number): Observable<IVehicle> {
+  updateCar(car: IVehicle, id: number): Observable<IVehicle> {
     return this.http.post(this.baseUrl + 'car/' + id, car).pipe(pluck('car'));
+  }
+
+  createCar(car: INewVehicle): Observable<IVehicle> {
+    return this.http.post(this.baseUrl + 'car', car).pipe(pluck('car'));
   }
 }

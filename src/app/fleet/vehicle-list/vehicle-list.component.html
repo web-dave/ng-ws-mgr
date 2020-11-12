@@ -6,6 +6,7 @@
     (vehicleselected)="vehicleWasSelected($event)"
   ></bka-vehicle-preview>
 </div> -->
+<a class="btn btn-success" routerLink="new">➕</a>
 <div *ngIf="vehicles$ | async as vehicles; else loading" class="row">
   <bka-vehicle-preview
     class="col-6"

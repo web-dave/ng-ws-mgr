@@ -10,7 +10,8 @@ import { AvailablePipe } from './shared/available.pipe';
 import { SeatsPipe } from './shared/seats.pipe';
 import { AvailableDirective } from './available.directive';
 import { VehicleEditComponent } from './vehicle-edit/vehicle-edit.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { VehicleNewComponent } from './vehicle-new/vehicle-new.component';
 
 @NgModule({
   declarations: [
@@ -22,8 +23,9 @@ import { FormsModule } from '@angular/forms';
     SeatsPipe,
     AvailableDirective,
     VehicleEditComponent,
+    VehicleNewComponent,
   ],
   exports: [FleetComponent],
-  imports: [CommonModule, FleetRoutingModule, FormsModule],
+  imports: [CommonModule, FleetRoutingModule, FormsModule, ReactiveFormsModule],
 })
 export class FleetModule {}
