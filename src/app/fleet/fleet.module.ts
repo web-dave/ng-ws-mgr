@@ -12,6 +12,7 @@ import { AvailableDirective } from './available.directive';
 import { VehicleEditComponent } from './vehicle-edit/vehicle-edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { VehicleNewComponent } from './vehicle-new/vehicle-new.component';
+import { ToastComponent } from './toast/toast.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { VehicleNewComponent } from './vehicle-new/vehicle-new.component';
     AvailableDirective,
     VehicleEditComponent,
     VehicleNewComponent,
+    ToastComponent,
   ],
   exports: [FleetComponent],
   imports: [CommonModule, FleetRoutingModule, FormsModule, ReactiveFormsModule],
