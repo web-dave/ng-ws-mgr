@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import { IVehicle } from '../models/ivehicle';
-import { FleetService } from '../shared/fleet.service';
+import { IVehicle } from '../../models/ivehicle';
+import { FleetService } from '../../shared/fleet.service';
 
 @Component({
   selector: 'bka-vehicle-details',

@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { FleetService } from '../shared/fleet.service';
+import { FleetService } from '../../shared/fleet.service';
 
 @Component({
   selector: 'bka-vehicle-new',
@@ -13,6 +13,7 @@ import { FleetService } from '../shared/fleet.service';
 export class VehicleNewComponent implements OnInit, OnDestroy {
   carForm: FormGroup;
   end$ = new Subject();
+  private saved = false;
   constructor(
     private builder: FormBuilder,
     private service: FleetService,
@@ -34,12 +35,17 @@ export class VehicleNewComponent implements OnInit, OnDestroy {
     this.service
       .createCar(this.carForm.value)
       .pipe(takeUntil(this.end$))
-      .subscribe(() =>
-        this.router.navigate(['..'], { relativeTo: this.route })
-      );
+      .subscribe(() => {
+        this.saved = true;
+        this.router.navigate(['..'], { relativeTo: this.route });
+      });
   }
 
   ngOnDestroy() {
     this.end$.next();
+  }
+
+  isSaved(): boolean {
+    return this.saved || this.carForm.pristine;
   }
 }

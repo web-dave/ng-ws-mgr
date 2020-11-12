@@ -2,8 +2,8 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 import { switchMap, takeUntil } from 'rxjs/operators';
-import { IVehicle } from '../models/ivehicle';
-import { FleetService } from '../shared/fleet.service';
+import { IVehicle } from '../../models/ivehicle';
+import { FleetService } from '../../shared/fleet.service';
 
 @Component({
   selector: 'bka-vehicle-edit',

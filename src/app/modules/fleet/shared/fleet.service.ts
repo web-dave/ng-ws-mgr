@@ -4,7 +4,7 @@ import { Observable, of } from 'rxjs';
 
 import { catchError, map, pluck, tap } from 'rxjs/operators';
 import { INewVehicle, IVehicle } from '../models/ivehicle';
-import { ToastService } from '../toast.service';
+import { ToastService } from './toast.service';
 
 @Injectable({
   providedIn: 'root',

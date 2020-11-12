@@ -5,7 +5,7 @@ import {
   Input,
   OnChanges,
 } from '@angular/core';
-import { AvailablePipe } from './shared/available.pipe';
+import { AvailablePipe } from './available.pipe';
 
 @Directive({
   selector: '[bkaAvailable]',

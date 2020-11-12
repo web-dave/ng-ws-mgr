@@ -1,21 +1,35 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+import { PreloadDelayed } from './shared/preload-delayed';
 
 const routes: Routes = [
   {
     path: 'fleet',
     loadChildren: () =>
-      import('./fleet/fleet.module').then((m) => m.FleetModule),
+      import('./modules/fleet/fleet.module').then((m) => m.FleetModule),
+    data: {
+      preload: true,
+      delay: 3000,
+    },
   },
   {
     path: 'about',
     loadChildren: () =>
-      import('./about/about.module').then((m) => m.AboutModule),
+      import('./modules/about/about.module').then((m) => m.AboutModule),
+    data: {
+      preload: true,
+      delay: 10000,
+    },
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, {
+      enableTracing: false,
+      preloadingStrategy: PreloadDelayed,
+    }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

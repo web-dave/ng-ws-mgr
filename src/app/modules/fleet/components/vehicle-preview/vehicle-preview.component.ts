@@ -7,7 +7,7 @@ import {
   Output,
   SimpleChanges,
 } from '@angular/core';
-import { IVehicle } from '../models/ivehicle';
+import { IVehicle } from '../../models/ivehicle';
 
 @Component({
   selector: 'bka-vehicle-preview',

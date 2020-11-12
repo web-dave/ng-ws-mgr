@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { ToastService } from './toast.service';
-
+import { ToastService } from '../../shared/toast.service';
 @Component({
   selector: 'bka-fleet',
   templateUrl: './fleet.component.html',
